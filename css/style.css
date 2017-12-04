@@ -4,7 +4,8 @@ body {
     height: 100%;
 }
 h1 {
-    color: #2a579a;   
+    color: #2a579a;  
+    margin-top: 0;
 }
 .ctn {
     width: 100%;

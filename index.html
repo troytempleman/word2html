@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="UTF-8">
+		<title>Word to HTML</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<body ng-app="word">
+			<div class="ctn" data-ng-controller="mainController">
+				<div class="row">
+					<div class="col instructions">
+						Paste styled content copied from Microsoft Word on the left and the corresponding HTML will appear on the right
+					</div>
+				</div>
+				<div class="row">
+					<div class="col controls">
+						<button
+							class="btn btn-default btn-clear"
+							style="margin-right: 20px;">
+						Clear
+						</button>
+						<label for="highlightAllEditor">
+						<input type="checkbox" id="highlightAllEditor" name="highlightAllEditor" data-ng-model="highlightAllEditor" />
+						Highlight all on focus
+						</label>
+					</div>
+					<div class="col controls">
+						<button
+							class="btn btn-primary btn-copy"
+							data-clipboard-target="#output"
+							style="margin-right: 20px;"
+							aria-label="Copied!">
+						Copy
+						</button>
+						<label for="highlightAll">
+						<input type="checkbox" id="highlightAll" name="highlightAll" data-ng-model="highlightAll" />
+						Highlight all on focus
+						</label>
+						<label for="stripParagraphs">
+						<input type="checkbox" id="stripParagraphs" name="stripParagraphs" data-ng-model="stripParagraphs" />
+						Strip paragraph tags
+						</label>
+						<label for="removeLinks">
+						<input type="checkbox" id="removeLinks" name="removeLinks" data-ng-model="removeLinks" />
+						Remove links
+						</label>
+					</div>
+				</div>
+				<div class="row editor-row">
+					<div class="col">
+						<div>
+							<textarea id="editor" data-ng-model="text" ui-tinymce="tinymceOptions"></textarea>
+						</div>
+					</div>
+					<div class="col">
+						<div>
+							<textarea id="output" class="output" data-ng-model="text" id=""></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+	<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js'></script>
+	<script src='https://cdn.tinymce.com/4/tinymce.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js'></script>
+	<script src="js/index.js"></script>
+	</body>
+</html>
